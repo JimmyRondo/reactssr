@@ -121,7 +121,7 @@
   },
   "lint-staged": {
     "*.{ts,tsx}": [
-      "tslint --fix",
+      "eslint --fix",
       "prettier --write",
       "git add"
     ],

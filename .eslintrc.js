@@ -22,6 +22,7 @@ module.exports = {
     // 类名与接口名必须为驼峰式
     '@typescript-eslint/class-name-casing': 'error',
     '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/camelcase': 'off',
   },
   settings: {
     react: {
