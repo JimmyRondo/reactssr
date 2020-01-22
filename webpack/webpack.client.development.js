@@ -2,7 +2,6 @@ const WebpackBar = require('webpackbar');
 const merge = require('webpack-merge');
 const webpack = require('webpack');
 
-const { createSelectorName } = require('./utils');
 const { client } = require('./common');
 const paths = require('./paths');
 
@@ -32,7 +31,6 @@ module.exports = merge(client, {
               importLoaders: 2,
               modules: {
                 mode: 'local',
-                getLocalIdent: createSelectorName,
                 localIdentName: '[local][hash:base64:5]',
               },
             },

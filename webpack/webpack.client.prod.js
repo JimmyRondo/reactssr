@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
@@ -6,7 +7,6 @@ const TerserPlugin = require('terser-webpack-plugin');
 const merge = require('webpack-merge');
 
 const { client, publicPath } = require('./common');
-const { createSelectorName } = require('./utils');
 const paths = require('./paths');
 
 const workerName = 'service-worker';
@@ -68,7 +68,6 @@ module.exports = merge(client, {
               importLoaders: 3,
               modules: {
                 mode: 'local',
-                getLocalIdent: createSelectorName,
                 localIdentName: '[local][hash:base64:5]',
               },
             },

@@ -4,7 +4,6 @@ const nodeExternals = require('webpack-node-externals');
 const merge = require('webpack-merge');
 const webpack = require('webpack');
 
-const { createSelectorName } = require('./utils');
 const paths = require('./paths');
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
@@ -122,7 +121,6 @@ const server = merge(common, {
               importLoaders: 2,
               modules: {
                 mode: 'local',
-                getLocalIdent: createSelectorName,
                 localIdentName: '[local][hash:base64:5]',
               },
             },

@@ -130,5 +130,22 @@
       "prettier --write",
       "git add"
     ]
+  },
+  "scripts": {
+    "test": "run-s test:*",
+    "test:code": "jest",
+    "test:types": "tsc --noEmit",
+    "test:lint": "tslint --project .",
+    "analyze": "run-p analyze:*",
+    "analyze:server": "source-map-explorer dist/index.*",
+    "analyze:bundle": "source-map-explorer dist/bundle.*",
+    "analyze:vendors": "source-map-explorer dist/vendors.*",
+    "prestart": "rimraf dist",
+    "prebuild": "rimraf dist",
+    "start": "cross-env NODE_ENV=development PORT=3001 nodemon",
+    "server": "cross-env NODE_ENV=production PORT=8081 node dist/index.js",
+    "build": "run-p build:*",
+    "build:client": "cross-env NODE_ENV=production TARGET=client webpack",
+    "build:server": "cross-env NODE_ENV=production TARGET=server webpack"
   }
 }
