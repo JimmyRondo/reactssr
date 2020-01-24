@@ -135,7 +135,7 @@
     "test": "run-s test:*",
     "test:code": "jest",
     "test:types": "tsc --noEmit",
-    "test:lint": "tslint --project .",
+    "test:lint": "eslint --ext .",
     "analyze": "run-p analyze:*",
     "analyze:server": "source-map-explorer dist/index.*",
     "analyze:bundle": "source-map-explorer dist/bundle.*",
